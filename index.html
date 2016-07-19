@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>This site is a sandbox.</title>
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size:  16px;
+  }
+  .content{
+    width: 100%;
+    background: #000;
+    color: #fff;
+  }
+  .image,
+  .image img{
+    width: 100%;
+  }
+  .image img{
+    vertical-align: bottom;
+  }
+  .test-msg{
+    padding: 20px 5px 0;
+    margin: 0 0 200px;
+  }
+  .upsets{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: yellow;
+    padding: 20px;
+  }
+  @media(min-width: 500px){
+    .content{
+      width: 450px;
+      margin: 0 auto;
+      background: #fff;
+      color: #333;
+    }
+    .upsets{
+      color: red
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <p class="test-msg">てりやきマックおいしい。てりやきマックおいしい。てりやきマックおいしい。てりやきマックおいしい。てりやきマックおいしい。</p>
+    <p class="image"><img src="pic1.jpg" alt="まさかの牛丼"></p>
+    <p class="upsets">まさかの牛丼</p>
+  </div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+
+  $(window).on('load resize', function(){
+    var x = $(window).width();
+    var y = 500;
+      if( x > y ){
+        $('.image img').attr({
+          src: "pic2.jpg",
+          alt: "これが食べたかった"
+        });
+        $('.upsets').text("これが食べたかった");
+      }else{
+        $('.image img').attr({
+          src: "pic1.jpg",
+          alt: "まさかの牛丼"
+        });
+        $('.upsets').text("まさかの牛丼");
+      }
+});
+
+</script>
+</body>
+</html>
